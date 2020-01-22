@@ -1,13 +1,16 @@
-How to use?
+# M3 Ring Scanner SDK
 
+[ ![Download](https://api.bintray.com/packages/sjw2554/sdk/ringscannersdk/images/download.svg?version=0.1.0) ](https://bintray.com/sjw2554/sdk/ringscannersdk/0.1.0/link)
 
-1. Add build.gradle > dependencies
+## How to use?
+
+### 1. Add build.gradle > dependencies
 
         implementation 'com.m3.ringscannersdk:ringscannersdk:0.1.0'
 
 
 
-2. Declare RingScannerService and scan callback message
+### 2. Declare RingScannerService and scan callback message
 
         RingScannerService ringScannerService = new RingScannerService() {
                 @Override
@@ -23,7 +26,7 @@ How to use?
         };
 
 
-3. Bind Service and unbind service
+### 3. Bind Service and unbind service
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -41,55 +44,56 @@ How to use?
 
 
 
-4. Use you want
+### 4. Use you want
 
-Readable on / off(true/false)
+#### Readable on / off(true/false)
+        
 
         ringScannerService.setReadable(true);
       
         
         
-Scan start(scan for 3second)
+#### Scan start(scan for 3second)
 
         ringScannerService.startScan();
 
 
-Default reset
+#### Default reset
 
         ringScannerService.defaultReset();
 
 
-Change bluetooth name
+#### Change bluetooth name
 
         ringScannerService.setBluetoothName("My Bluetooth");
 
 
-Set sound volume(0: off, 1: high, 2: mid, 3: low)
+#### Set sound volume(0: off, 1: high, 2: mid, 3: low)
 
         ringScannerService.setSoundVolume(0);
 
 
-Set sleep time(1-240 minute)
+#### Set sleep time(1-240 minute)
 
         ringScannerService.setSleepTime(10);
 
 
-Set end character(0: Enter, 1: Space, 2: tab, 3: none)
+#### Set end character(0: Enter, 1: Space, 2: tab, 3: none)
 
         ringScannerService.setEndCharacter(0);
 
 
-Set prefix("": none)
+#### Set prefix("": none)
 
         ringScannerService.setPrefix("");
 
 
-Set suffix("": none)
+#### Set suffix("": none)
 
         ringScannerService.setPrefix("");
 
 
-Get scanner id info
+#### Get scanner id info
 
         ringScannerService.getCallbackMessage(new ScannerIDCallback.Stub() {
                 @Override
@@ -98,7 +102,7 @@ Get scanner id info
         });
 
 
-Get scanner battery info(voltage, ratio)
+#### Get scanner battery info(voltage, ratio)
 
         ringScannerService.getCallbackMessage(new ScannerBatteryCallback.Stub() {
                 @Override
@@ -107,7 +111,7 @@ Get scanner battery info(voltage, ratio)
         });
 
 
-Get scanner version and bluetooth version info
+#### Get scanner version and bluetooth version info
 
         ringScannerService.getCallbackMessage(new ScannerVersionCallback.Stub() {
                 @Override
