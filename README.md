@@ -1,34 +1,55 @@
 How to use?
 
 
+1. Add build.gradle > dependencies
 
-Start and scan message receiver
+        implementation 'com.m3.ringscannersdk:ringscannersdk:0.1.0'
 
-        RingScannerService ringScannerService = new RingScannerService(getApplicationContext()) {
+
+
+2. Declare RingScannerService and scan callback message
+
+        RingScannerService ringScannerService = new RingScannerService() {
                 @Override
                 public void onServiceConnected(ComponentName name, IBinder service) {
                         super.onServiceConnected(name, service);
                         ringScannerService.getCallbackMessage(new ScannerReceiver.Stub() {
                                 @Override
                                 public void message(final String s) {
-                                        runOnUiThread(new Runnable() {
-                                                public void run() {
-                                                        // s: receive message 
-                                                }
-                                        });
+                                        // To do
                                 }
                         });
                 }
         };
 
 
-Readable on / off
+3. Bind Service and unbind service
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+                ringScannerService.bindService(getApplicationContext());
+        }
+
+        @Override
+        protected void onDestroy() {
+                if (ringScannerService != null) {
+                        ringScannerService.unbindService();
+                }
+                super.onDestroy();
+        }
+
+
+
+4. Use you want
+
+Readable on / off(true/false)
 
         ringScannerService.setReadable(true);
-        ringScannerService.setReadable(false);
+      
         
         
-Scan start
+Scan start(scan for 3second)
 
         ringScannerService.startScan();
 
@@ -38,43 +59,37 @@ Default reset
         ringScannerService.defaultReset();
 
 
-Bluetooth name
+Change bluetooth name
 
         ringScannerService.setBluetoothName("My Bluetooth");
 
 
-Sound volume(0: off, 1: high, 2: mid, 3: low)
+Set sound volume(0: off, 1: high, 2: mid, 3: low)
 
         ringScannerService.setSoundVolume(0);
-        ringScannerService.setSoundVolume(1);
-        ringScannerService.setSoundVolume(2);
-        ringScannerService.setSoundVolume(3);
 
 
-Sleep time(0-240)
+Set sleep time(1-240 minute)
 
         ringScannerService.setSleepTime(10);
 
 
-End character(0: Enter, 1: Space, 2: tab, 3: none)
+Set end character(0: Enter, 1: Space, 2: tab, 3: none)
 
         ringScannerService.setEndCharacter(0);
-        ringScannerService.setEndCharacter(1);
-        ringScannerService.setEndCharacter(2);
-        ringScannerService.setEndCharacter(3);
 
 
-Prefix("": none)
+Set prefix("": none)
 
         ringScannerService.setPrefix("");
 
 
-Suffix("": none)
+Set suffix("": none)
 
         ringScannerService.setPrefix("");
 
 
-Scanner id
+Get scanner id info
 
         ringScannerService.getCallbackMessage(new ScannerIDCallback.Stub() {
                 @Override
@@ -83,7 +98,7 @@ Scanner id
         });
 
 
-Scanner battery
+Get scanner battery info(voltage, ratio)
 
         ringScannerService.getCallbackMessage(new ScannerBatteryCallback.Stub() {
                 @Override
@@ -92,7 +107,7 @@ Scanner battery
         });
 
 
-Scanner version
+Get scanner version and bluetooth version info
 
         ringScannerService.getCallbackMessage(new ScannerVersionCallback.Stub() {
                 @Override
