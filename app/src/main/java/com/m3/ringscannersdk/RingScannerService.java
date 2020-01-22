@@ -20,19 +20,21 @@ public class RingScannerService implements ServiceConnection {
     private Context context;
     private boolean isScannerReceiverOpened;
 
-    public RingScannerService(Context context) {
+    private boolean isConnected() {
+        return iRingScannerService != null;
+    }
+
+    public void bindService(Context context) {
         this.context = context;
         Intent intent = new Intent("com.m3.ringscanner.aidl");
         intent.setPackage("com.m3.ringscanner");
         context.bindService(intent, this, Context.BIND_AUTO_CREATE | Context.BIND_ABOVE_CLIENT);
     }
 
-    private boolean isConnected() {
-        return iRingScannerService != null;
-    }
-
-    public void disconnect() {
-        context.unbindService(this);
+    public void unbindService() {
+        if (context != null) {
+            context.unbindService(this);
+        }
     }
 
     public void setReadable(boolean aBoolean) {

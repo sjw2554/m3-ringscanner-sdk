@@ -1,5 +1,13 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'com.novoda.bintray-release'
+publish {
+    userOrg = 'sjw2554'
+    groupId = 'com.m3.ringscannersdk'
+    artifactId = 'ringscannersdk'
+    publishVersion = '0.1.0'
+    desc = 'M3 Ring Scanner SDK'
+    website = 'https://github.com/sjw2554/m3-ringscanner-sdk'
+}
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
