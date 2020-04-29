@@ -127,6 +127,26 @@ public class RingScannerService implements ServiceConnection {
         }
     }
 
+    public void setTransmitCode(int anInt) {
+        if (isConnected()) {
+            try {
+                iRingScannerService.setTransmitCode(anInt);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void setBarcodeType(int anInt, boolean aBoolean) {
+        if (isConnected()) {
+            try {
+                iRingScannerService.setBarcodeType(anInt, aBoolean);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public void getCallbackMessage(ScannerIDCallback callback) {
         if (isConnected()) {
             try {

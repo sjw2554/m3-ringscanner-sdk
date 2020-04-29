@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UseSDKActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Readable on / off" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/readable_on"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="on" />
+
+                    <Button
+                        android:id="@+id/readable_off"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="off" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Start scan" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/scan_start"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="start" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Default reset" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/default_reset"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="reset" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bluetooth name" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/bluetooth_name_edit"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:maxLength="12"
+                        android:inputType="text"
+                        android:hint="max: 12, empty: Default"
+                        />
+
+                    <Button
+                        android:id="@+id/bluetooth_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="change" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sound Volume" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/sound_volume_off"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Off" />
+
+                    <Button
+                        android:id="@+id/sound_volume_high"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="High" />
+
+                    <Button
+                        android:id="@+id/sound_volume_mid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Mid" />
+
+                    <Button
+                        android:id="@+id/sound_volume_low"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Low" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sleep time" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/sleep_time_edit"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:maxLength="3"
+                        android:hint="range: 1~240 min"
+                        android:inputType="number"
+                        />
+
+                    <Button
+                        android:id="@+id/sleep_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="set" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Barcode type" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/barcode_type_edit"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:maxLength="2"
+                        android:hint="range: 0~46"
+                        android:inputType="number"
+                        />
+
+                    <Button
+                        android:id="@+id/barcode_type_enable"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="On" />
+
+                    <Button
+                        android:id="@+id/barcode_type_disenable"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Off" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Transmit Code ID" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/transmit_id_none"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="None" />
+
+                    <Button
+                        android:id="@+id/transmit_id_aim"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="AIM ID" />
+
+                    <Button
+                        android:id="@+id/transmit_id_symbol"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Symbol ID" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="End character" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/end_character_enter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Enter" />
+
+                    <Button
+                        android:id="@+id/end_character_space"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Space" />
+
+                    <Button
+                        android:id="@+id/end_character_tab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tab" />
+
+                    <Button
+                        android:id="@+id/end_character_none"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="None" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Prefix" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/prefix_edit"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:maxLength="5"
+                        android:hint="max: 5"
+                        />
+
+                    <Button
+                        android:id="@+id/prefix"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="set" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Suffix" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/suffix_edit"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:maxLength="5"
+                        android:hint="max: 5"
+                        />
+
+                    <Button
+                        android:id="@+id/suffix"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="set" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Scanner ID" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/scanner_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="get" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Scanner battery" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/scanner_battery"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="get" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Scanner version" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/scanner_version"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="get" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

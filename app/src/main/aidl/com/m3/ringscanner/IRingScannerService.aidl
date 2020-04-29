@@ -20,4 +20,6 @@ interface IRingScannerService {
     void getScannerVersion(ScannerVersionCallback callback);
     boolean openScannerReceiver(ScannerReceiver message);
     void closeScannerReceiver();
+    void setTransmitCode(int anInt);
+    void setBarcodeType(int anInt, boolean aBoolean);
 }
